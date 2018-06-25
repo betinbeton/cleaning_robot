@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cleaning_Robot_Lib</name>
+    </assembly>
+    <members>
+        <member name="T:Cleaning_Robot_Lib.Barrier">
+            <summary>
+            This class implement a barrier 
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Barrier.checkForBarrier(System.String)">
+            <summary>
+            this method is use to se if in the space exist a barrier
+            if we need to add more barriers we only need to update the method with another barrier and the enum
+            </summary>
+            <param name="space">what is in the space</param>
+            <returns>True if a barrier exits</returns>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Batterry">
+            <summary>
+            This class is use to manipulate the battery
+            we can check the battery life
+            use the battery
+            also in the future if we have to change the units that consume we can do this where
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Batterry.#ctor(System.Int32)">
+            <summary>
+            Constructor that inicialize a diccionary with the unit of battery that consume
+            depending of the instruction
+            </summary>
+            <param name="battery">battery life</param>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Batterry.batteryLife">
+            <summary>
+            Propieti to set or get the battery life
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Batterry.getBatteryDrain(System.String)">
+            <summary>
+            get the unit of batery that use 
+            </summary>
+            <param name="key">the action to perform</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Batterry.checkIfCanExecute(System.Int32,System.Int32)">
+            <summary>
+            This method is use to see if we have plenty of batery to do some acction
+            also if in the future we need to change the logic of how to check the battery for some operation we can change the logic here
+            </summary>
+            <param name="costOperation"></param>
+            <param name="batteryLife"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Commads">
+            <summary>
+            This class is to generate the Commands that we have, if we reuse the class we wil have the values for other projects
+            </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Commads.cmds">
+            <summary>
+            /Enumeration of the commands that the robot can do
+            with the value of unit of the battery that consume
+            </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Final">
+            <summary>
+            Objet use to create Json Response
+            final point that the robot visit
+            </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Input">
+            <summary>
+            Class used to deserialize the json object
+            </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Map">
+            <summary>
+            Object to represent the map where the robot is going to move
+            </summary>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Map.x">
+            <summary>
+            x axis
+            </summary>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Map.y">
+            <summary>
+            y axis
+            </summary>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Map.space">
+            <summary>
+            what is on the space
+            </summary>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Map.facing">
+            <summary>
+            where is facing the robot
+            </summary>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Map.visited">
+            <summary>
+            Flag to see is the robot visit the space
+            </summary>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Map.outBattery">
+            <summary>
+            Flag to indicate where the robot when out of battery
+            </summary>
+        </member>
+        <member name="P:Cleaning_Robot_Lib.Map.cleaned">
+            <summary>
+            Flag to see is the robot clean the space
+            </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Obstacle">
+            <summary>
+            This class is use to handle the obstacles that the robot have
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Obstacle.obstacle(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            This method is use to se how many attemps the robot have
+            depeing of the attemp the robot use a diferent algorithm
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">what is the max row</param>
+            <param name="maxColumn">what is the max column</param>
+            <param name="attemp">number of attemp</param>
+            <param name="baterry">object baterry</param>
+            <returns>map that handle the obtacle</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Obstacle.obstacleAttemp1(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            obstacle attemp 1 logic
+            Turn right, then advance. (TR, A)
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">what is the max row</param>
+            <param name="maxColumn">what is the max column</param>
+            <param name="attemp">number of attemp</param>
+            <param name="baterry">object baterry</param>
+            <returns>new map</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Obstacle.obstacleAttemp2(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            obstacle attemp 2 logic
+            If that also hits an obstacle: Turn Left, Back, Turn Right, Advance (TL, B, TR, A)
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">what is the max row</param>
+            <param name="maxColumn">what is the max column</param>
+            <param name="attemp">number of attemp</param>
+            <param name="baterry">object baterry</param>
+            <returns>new map</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Obstacle.obstacleAttemp3(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            obstacle attemp 3 logic
+            If that also hits an obstacle: Turn Left, Turn Left, Advance (TL, TL, A)
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">what is the max row</param>
+            <param name="maxColumn">what is the max column</param>
+            <param name="attemp">number of attemp</param>
+            <param name="baterry">object baterry</param>
+            <returns>new map</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Obstacle.obstacleAttemp4(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            obstacle attemp 4 logic
+            If that also hits and obstacle: Turn Right, Back, Turn Right, Advance (TR, B, TR, A)
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">what is the max row</param>
+            <param name="maxColumn">what is the max column</param>
+            <param name="attemp">number of attemp</param>
+            <param name="baterry">object baterry</param>
+            <returns>new map</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Obstacle.obstacleAttemp5(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            obstacle attemp 5 logic
+            If that also hits and obstacle: Turn Left, Turn Left, Advance (TL, TL, A)
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">what is the max row</param>
+            <param name="maxColumn">what is the max column</param>
+            <param name="attemp">number of attemp</param>
+            <param name="baterry">object baterry</param>
+            <returns>new map</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Obstacle.obstacleAttemp6(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            obstacle attemp 6 logic
+            If an obstacle is hit again the robot will stop and return.
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">what is the max row</param>
+            <param name="maxColumn">what is the max column</param>
+            <param name="attemp">number of attemp</param>
+            <param name="baterry">object baterry</param>
+            <returns>new map</returns>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Orientation">
+            <summary>
+            This class implements the orientation of the robot
+            where is facing and where need to be facing
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Orientation.#ctor">
+             <summary>
+             constructor to inizialize a dictionary
+            this dictionary contains a key with the facing and instruction 
+            and the value of the result of the key(facing + instruction)
+             </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Orientation.direction">
+            <summary>
+            enum of facing or orientation
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Orientation.getTR(System.String)">
+            <summary>
+            change facing position when a TL instruction is given 
+            </summary>
+            <param name="key">facing position and the instruction</param>
+            <returns>new facing</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Orientation.getTL(System.String)">
+            <summary>
+            change facing position when a TL instruction is given  
+            </summary>
+            <param name="key">facing position and the instruction</param>
+            <returns>new facing</returns>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Output">
+            <summary>
+            Class used to serialize the json object
+            this object will be send it
+            </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Position">
+            <summary>
+            This class is use to play with the position of the robot.
+            Be happy =)
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Position.changePosition(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32)">
+            <summary>
+            This method is use to change the position of the robot 
+            using the new x axis or new y axis to move
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="facing">where is the robot and where is facing</param>
+            <param name="newX">new x axis to move</param>
+            <param name="newY">new y axis to move</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Position.outBatteryPosition(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.Int32,System.Int32)">
+            <summary>
+            Save where the robot when out of battery
+            we dont use but i was playing with it:)
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <returns>where the robot dies</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Position.cleanPosition(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.Int32,System.Int32)">
+             <summary>
+            This method flag the space as cleaned 
+             </summary>
+             <param name="map">map of the robot</param>
+             <param name="x">x axis</param>
+             <param name="y">y axis</param>
+             <returns>the space cleaned</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Cleaning_Robot_Lib.Position.advancePosition(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)" -->
+        <member name="M:Cleaning_Robot_Lib.Position.backPosition(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Cleaning_Robot_Lib.Batterry)">
+            <summary>
+            This method is use to move back one space in the map
+            </summary>
+            <param name="map">The map of the robot</param>
+            <param name="facing">Where is facing the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <param name="maxRow">The max value in the row, after that is wall</param>
+            <param name="maxColumn">The max value in the column, after that is wall</param>
+            <param name="attemp">Number of attempts to move</param>
+            <param name="baterry">The object battery</param>
+            <returns>New Map with the new position of the robot</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Position.checkNextSpaceContain(System.Collections.Generic.List{Cleaning_Robot_Lib.Map},System.Int32,System.Int32)">
+            <summary>
+            Check what is in the space
+            </summary>
+            <param name="map">map of the robot</param>
+            <param name="x">x axis</param>
+            <param name="y">y axis</param>
+            <returns>What is in the space</returns>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Robot">
+            <summary>
+            This is the object of the robot 
+            we use this to manipulate the actions of the robot
+            </summary>
+        </member>
+        <member name="F:Cleaning_Robot_Lib.Robot.input">
+            <summary>
+            input object that is use from a json object
+            </summary>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Robot.studytMap(Cleaning_Robot_Lib.Input)">
+            <summary>
+            This method get the input map and create a new object map with more attributes
+            </summary>
+            <param name="input">map</param>
+            <returns>new map object</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Robot.perform(System.String)">
+            <summary>
+            The robot perform an instruction
+            </summary>
+            <param name="cmd">command</param>
+            <returns>new map with the instruction applied</returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Robot.getVisited(System.Collections.Generic.List{Cleaning_Robot_Lib.Map})">
+            <summary>
+            get what spaces the robot visited
+            </summary>
+            <param name="map"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Robot.getCleaned(System.Collections.Generic.List{Cleaning_Robot_Lib.Map})">
+            <summary>
+            get what spaces the robot cleaned
+            </summary>
+            <param name="map"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Robot.getFinal(System.Collections.Generic.List{Cleaning_Robot_Lib.Map})">
+            <summary>
+            get the final position of the robot
+            </summary>
+            <param name="map"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cleaning_Robot_Lib.Robot.start">
+            <summary>
+            This method start the robot to do something
+            </summary>
+            <returns>output of the robot, what does the robot did</returns>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Start">
+            <summary>
+            object to handle the start position of the robot
+            </summary>
+        </member>
+        <member name="T:Cleaning_Robot_Lib.Visited">
+            <summary>
+            Objet use to create Json Response
+            Where the robot visited
+            </summary>
+        </member>
+    </members>
+</doc>
