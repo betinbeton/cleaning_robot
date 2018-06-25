@@ -1,0 +1,11 @@
+{
+  "map": [
+    ["S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S"],
+    ["S", "S", "C", "S" ,"null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null","null"],
+    ["S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S"],
+    ["S", "S", "null", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S","S", "S", "S", "S"]
+  ],
+  "start": {"X": 3, "Y": 1, "facing": "S"},
+  "commands": [ "A"],
+  "battery": 1094
+}
