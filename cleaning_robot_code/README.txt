@@ -1,0 +1,1 @@
+If is you first time do a rebuid and thet a build solution to update the lib in all the projects

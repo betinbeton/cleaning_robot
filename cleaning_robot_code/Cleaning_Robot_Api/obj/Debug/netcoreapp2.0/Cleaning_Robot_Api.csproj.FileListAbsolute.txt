@@ -1,0 +1,14 @@
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\bin\Debug\netcoreapp2.0\Cleaning_Robot_Api.deps.json
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\bin\Debug\netcoreapp2.0\Cleaning_Robot_Api.runtimeconfig.json
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\bin\Debug\netcoreapp2.0\Cleaning_Robot_Api.runtimeconfig.dev.json
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\bin\Debug\netcoreapp2.0\Cleaning_Robot_Api.dll
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\bin\Debug\netcoreapp2.0\Cleaning_Robot_Api.pdb
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\obj\Debug\netcoreapp2.0\Cleaning_Robot_Api.csprojResolveAssemblyReference.cache
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\obj\Debug\netcoreapp2.0\Cleaning_Robot_Api.csproj.CoreCompileInputs.cache
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\obj\Debug\netcoreapp2.0\Cleaning_Robot_Api.AssemblyInfoInputs.cache
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\obj\Debug\netcoreapp2.0\Cleaning_Robot_Api.AssemblyInfo.cs
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\obj\Debug\netcoreapp2.0\Cleaning_Robot_Api.dll
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\obj\Debug\netcoreapp2.0\Cleaning_Robot_Api.pdb
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\bin\Debug\netcoreapp2.0\Cleaning_Robot_Lib.dll
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\bin\Debug\netcoreapp2.0\Cleaning_Robot_Lib.pdb
+D:\c#\MyQ Coding Test - Roomba Robot\cleaning_robot\cleaning_robot\Cleaning_Robot_Api\obj\Debug\netcoreapp2.0\Cleaning_Robot_Api.csproj.CopyComplete
