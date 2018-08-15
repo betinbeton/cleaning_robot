@@ -9,3 +9,6 @@ The purpose of this code is to show my c# programing skills. This was a test tha
 
 
 # Project methodology:
+
+
+[](https://github.com/betinbeton/cleaning_robot/blob/master/xml_documentation/img/h1.JPG)  
