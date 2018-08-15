@@ -5,7 +5,7 @@ The purpose of this code is to show my c# programing skills. This was a test tha
 
 # Project requirement
  
-[View Project Requirement](https://tindie.com/stores/lspoplove)  
+[View Project Requirement](https://github.com/betinbeton/cleaning_robot/wiki/Project-requirement)  
 
 
 # Project methodology:
