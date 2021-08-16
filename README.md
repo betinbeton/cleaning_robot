@@ -12,7 +12,7 @@ The purpose of this code is to show my c# programing skills. This was a test tha
 
 This project was created using scrum methodology. I create all the tasks that need to be done and create my custom scrum board having: things to be done, testing and done area.
 
-![](https://github.com/betinbeton/cleaning_robot/blob/master/xml_documentation/img/h1.JPG)
+
 
 
 # Folder description
